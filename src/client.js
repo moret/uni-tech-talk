@@ -6,6 +6,11 @@ const mountNode = document.getElementById('react-root');
 
 // Pretend it takes some time to actually load the file
 setTimeout(() => {
-  ReactDOM.render(<Hello>World</Hello>, mountNode);
-  console.log('app started');
+  const apiRequest = new XMLHttpRequest();
+  apiRequest.onload = () => {
+    ReactDOM.render(<Hello>{apiRequest.responseText}</Hello>, mountNode);
+    console.log('app started');
+  }
+  apiRequest.open('get', '/api', true);
+  apiRequest.send();
 }, 300);
