@@ -7,4 +7,5 @@ const mountNode = document.getElementById('react-root');
 // Pretend it takes some time to actually load the file
 setTimeout(() => {
   ReactDOM.render(<Hello>World</Hello>, mountNode);
+  console.log('app started');
 }, 300);
