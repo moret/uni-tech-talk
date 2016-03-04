@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
       `<!doctype html>
       <html lang='en-us'>
         <body>
+          <script>window.__store = ${JSON.stringify({user: user})};</script>
           <div id='react-root'>${reactString}</div>
           <script src='/bundle.js'></script>
         </body>
