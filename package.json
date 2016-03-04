@@ -15,6 +15,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.6.0",
     "express": "^4.13.4",
+    "mappersmith": "^0.13.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "webpack": "^1.12.14"

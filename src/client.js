@@ -1,16 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Hello from './app';
+import API from './api';
 
 const mountNode = document.getElementById('react-root');
 
 // Pretend it takes some time to actually load the file
 setTimeout(() => {
-  const apiRequest = new XMLHttpRequest();
-  apiRequest.onload = () => {
-    ReactDOM.render(<Hello>{apiRequest.responseText}</Hello>, mountNode);
+  API.User.me(user => {
+    ReactDOM.render(<Hello>{user}</Hello>, mountNode);
     console.log('app started');
-  }
-  apiRequest.open('get', '/api', true);
-  apiRequest.send();
+  });
 }, 300);
